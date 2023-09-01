@@ -2,6 +2,8 @@ import sklearn
 import requests
 from bs4 import BeautifulSoup
 
+# TODO Finish HTML Parser and provide input command
+
 url = "https://en.wikipedia.org/wiki/World_War_I"
 page = requests.get(url)
 soup = BeautifulSoup(page.text, 'html.parser')
