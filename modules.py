@@ -1,9 +1,9 @@
-import sklearn
+import string
 import requests
 from bs4 import BeautifulSoup
-import numpy as np
 from newspaper import Article
-import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
 
 # TODO Finish HTML Parser and provide input command
 # Idea: parse metadata from articles for citation purposes
@@ -36,5 +36,19 @@ class Analysis(Article):
         article.nlp()
         return article.summary
 
-    def get_metadata(self) -> str:
-        print(f"")
+    def lemmat(self, summ_length) -> str:
+        article = Article(self.url)
+        article.download()
+        article.parse()
+        output = []
+        lemm = WordNetLemmatizer()
+        # Remove punctuation
+        raw_text = article.text[:summ_length].translate(str.maketrans("", "", string.punctuation))
+        # Tokenize the words
+        tokens = word_tokenize(raw_text)
+        for word in tokens:
+            output.append((lemm.lemmatize(word, pos='v')))
+        return output
+
+    # def get_metadata(self) -> str:
+    #     print(f"")
