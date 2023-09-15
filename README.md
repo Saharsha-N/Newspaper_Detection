@@ -1,5 +1,7 @@
 # Newspaper_Detection
 
+
+- Do this instead
 ## Packages Used
 - Requests
 - BeautifulSoup4
