@@ -2,6 +2,7 @@
 
 
 - Do this instead
+- Change of Plan
 ## Packages Used
 - Requests
 - BeautifulSoup4
