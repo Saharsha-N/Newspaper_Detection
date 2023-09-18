@@ -4,6 +4,7 @@
 - Do this instead
 - Change of Plan
 - Resume Word Removal
+- Target - Shorten to Key Words
 ## Packages Used
 - Requests
 - BeautifulSoup4
