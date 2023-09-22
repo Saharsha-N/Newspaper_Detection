@@ -6,6 +6,7 @@
 - Resume Word Removal
 - Target - Shorten to Key Words
 - Start Sentimental Analysis   
+- Learn sent analysis
 ## Packages Used
 - Requests
 - BeautifulSoup4
