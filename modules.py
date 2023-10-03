@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 from newspaper import Article
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
 
 # TODO Finish HTML Parser and provide input command
 # Idea: parse metadata from articles for citation purposes
@@ -40,7 +42,7 @@ class Analysis(Article):
         article = Article(self.url)
         article.download()
         article.parse()
-        output = []
+        global output
         lemm = WordNetLemmatizer()
         # Remove punctuation
         raw_text = article.text[:summ_length].translate(str.maketrans("", "", string.punctuation))
@@ -49,6 +51,9 @@ class Analysis(Article):
         for word in tokens:
             output.append((lemm.lemmatize(word, pos='v')))
         return output
+
+    def sent_analysis(self, output):
+        analyzer = SentimentIntensityAnalyzer()
 
     # def get_metadata(self) -> str:
     #     print(f"")
