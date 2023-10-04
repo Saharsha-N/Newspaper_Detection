@@ -1,5 +1,6 @@
 import string
 import requests
+import pandas
 from bs4 import BeautifulSoup
 from newspaper import Article
 from nltk.stem import WordNetLemmatizer
@@ -43,6 +44,7 @@ class Analysis(Article):
         article.download()
         article.parse()
         global output
+        output = []
         lemm = WordNetLemmatizer()
         # Remove punctuation
         raw_text = article.text[:summ_length].translate(str.maketrans("", "", string.punctuation))
@@ -51,9 +53,6 @@ class Analysis(Article):
         for word in tokens:
             output.append((lemm.lemmatize(word, pos='v')))
         return output
-
-    def sent_analysis(self, output):
-        analyzer = SentimentIntensityAnalyzer()
 
     # def get_metadata(self) -> str:
     #     print(f"")
