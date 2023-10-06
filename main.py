@@ -16,4 +16,6 @@ print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_
 
 
 sid_obj = SentimentIntensityAnalyzer()
-print(sid_obj.polarity_scores(new_article.article_summary()))
+print(sid_obj.polarity_scores(new_article.article_text(2000)))
+
+# using the score and summary, combin them and analyze hows its negative and what way its leaning towards. specific lines that have the most negative appeal (make a code or use a in-bulit function to find the number of characters, and use that to fund in the () for the number of charcters)
