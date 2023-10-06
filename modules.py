@@ -8,6 +8,8 @@ from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
+
+
 # TODO Finish HTML Parser and provide input command
 # Idea: parse metadata from articles for citation purposes
 
@@ -56,3 +58,4 @@ class Analysis(Article):
 
     # def get_metadata(self) -> str:
     #     print(f"")
+

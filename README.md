@@ -15,3 +15,4 @@
 - Hugging Face Transformer
 - NLTK
 - Rouge-Score
+- vaderSentiment
