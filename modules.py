@@ -7,9 +7,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-
-
-
 # TODO Finish HTML Parser and provide input command
 # Idea: parse metadata from articles for citation purposes
 
@@ -45,7 +42,6 @@ class Analysis(Article):
         article = Article(self.url)
         article.download()
         article.parse()
-        global output
         output = []
         lemm = WordNetLemmatizer()
         # Remove punctuation
