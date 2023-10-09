@@ -3,6 +3,7 @@ import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+nltk.download('vader_lexicon')
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from colorama import Fore, Style
 
@@ -12,16 +13,12 @@ lemm_article = new_article.lemmat(500)
 
 # print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
-
-sid_obj = SentimentIntensityAnalyzer()
+sid = SentimentIntensityAnalyzer()
 # print(sid_obj.polarity_scores(new_article.article_summary()))
 
 # using the score and summary, combin them and analyze hows its negative and what way its leaning towards. specific lines that have the most negative appeal (make a code or use a in-bulit function to find the number of characters, and use that to fund in the () for the number of charcters)
 # len_article = len(new_article.article_text)
-articleText = (new_article.article_text(999999999999999**999))
-
-nltk.download('vader_lexicon')
-sid = SentimentIntensityAnalyzer()
+articleText = (new_article.extract_text())
 
 sentences = nltk.sent_tokenize(articleText)
 threshold = 0.6

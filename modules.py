@@ -24,12 +24,12 @@ class Analysis(Article):
             data += tag.get_text()
         return data
 
-    def article_text(self, summ_length) -> str:
+    def article_text(self) -> str:
         article = Article(self.url)
         article.download()
         article.parse()
         article_data = article.text
-        return article_data[:summ_length]
+        return article_data
 
     def article_summary(self) -> str:
         article = Article(self.url)

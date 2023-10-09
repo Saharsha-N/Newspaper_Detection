@@ -16,3 +16,4 @@
 - NLTK
 - Rouge-Score
 - vaderSentiment
+- Colorama
