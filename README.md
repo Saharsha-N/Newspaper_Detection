@@ -5,6 +5,7 @@
 - Change of Plan
 - Resume Word Removal
 - Target - Shorten to Key Words
+- Identify the topic of the biased information
 
 
 ## Packages Used
