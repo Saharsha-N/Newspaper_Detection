@@ -6,6 +6,7 @@
 - Resume Word Removal
 - Target - Shorten to Key Words
 - Identify the topic of the biased information
+- Address Issues
 
 
 ## Packages Used
