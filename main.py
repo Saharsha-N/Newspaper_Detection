@@ -6,6 +6,9 @@ nltk.download('omw-1.4')
 nltk.download('vader_lexicon')
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from colorama import Fore, Style
+from gensim import corpora, models
+import gensim
+import unicodedata2
 
 # TODO Finish HTML Parser and provide input command
 new_article = modules.Analysis('https://en.wikipedia.org/wiki/World_War_I')
@@ -34,4 +37,29 @@ for sentence in sentences:
             highlighted_sentence = Fore.RED + sentence + Style.RESET_ALL
     else:
         highlighted_sentence = sentence
-    print(highlighted_sentence)
+    #print(highlighted_sentence)
+
+# Preprocess your text data
+texts = ["Your text goes here", "Another text here", ...]
+tokenized_texts = [articleText]
+
+for text in texts:
+    try:
+        # Use the unicodedata library to normalize the text and remove non-UTF-8 characters
+        normalized_text = unicodedata.normalize('NFKD', text).encode('utf-8', 'ignore').decode('utf-8')
+        tokenized_text = gensim.utils.simple_preprocess(normalized_text)
+        tokenized_texts.append(tokenized_text)
+    except Exception as e:
+        print(f"Error preprocessing text: {e}")
+
+# Create a dictionary and a document-term matrix
+dictionary = corpora.Dictionary(tokenized_texts)
+corpus = [dictionary.doc2bow(text) for text in tokenized_texts]
+
+# Train the LDA model
+lda_model = models.LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15)
+
+# Get the topics
+topics = lda_model.print_topics(num_words=5)
+for topic in topics:
+    print(topic)
