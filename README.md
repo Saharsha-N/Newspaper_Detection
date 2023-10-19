@@ -7,7 +7,8 @@
 - Target - Shorten to Key Words
 - Identify the topic of the biased information
 - Address Issues
-- Convert String
+- Convert String - Do now
+
 
 
 ## Packages Used
