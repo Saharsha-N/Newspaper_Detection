@@ -10,6 +10,17 @@ from gensim import corpora, models
 import gensim
 import unicodedata2
 
+import unicodedata2
+
+def tokenize_string(input_string):
+    # Normalize the input string to ensure consistent Unicode representation
+    normalized_string = unicodedata2.normalize('NFKD', input_string)
+
+    # Use str.split to split the normalized string into tokens based on whitespace
+    tokens = normalized_string.split()
+
+    return tokens
+
 # TODO Finish HTML Parser and provide input command
 new_article = modules.Analysis('https://en.wikipedia.org/wiki/World_War_I')
 lemm_article = new_article.lemmat(500)
@@ -41,12 +52,19 @@ for sentence in sentences:
 
 # Preprocess your text data
 texts = ["Your text goes here", "Another text here", ...]
-tokenized_texts = [articleText]
+
+input_string = articleText
+tokens = tokenize_string(input_string)
+
+tokenized_texts = tokens
+
+
+
 
 for text in texts:
     try:
         # Use the unicodedata library to normalize the text and remove non-UTF-8 characters
-        normalized_text = unicodedata.normalize('NFKD', text).encode('utf-8', 'ignore').decode('utf-8')
+        normalized_text = unicodedata2.normalize('NFKD', text).encode('utf-8', 'ignore').decode('utf-8')
         tokenized_text = gensim.utils.simple_preprocess(normalized_text)
         tokenized_texts.append(tokenized_text)
     except Exception as e:
