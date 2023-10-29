@@ -9,17 +9,9 @@ from colorama import Fore, Style
 from gensim import corpora, models
 import gensim
 import unicodedata2
+nltk.download('vader_lexicon')
+nltk.download('punkt')
 
-import unicodedata2
-
-def tokenize_string(input_string):
-    # Normalize the input string to ensure consistent Unicode representation
-    normalized_string = unicodedata2.normalize('NFKD', input_string)
-
-    # Use str.split to split the normalized string into tokens based on whitespace
-    tokens = normalized_string.split()
-
-    return tokens
 
 # TODO Finish HTML Parser and provide input command
 new_article = modules.Analysis('https://en.wikipedia.org/wiki/World_War_I')
@@ -28,7 +20,7 @@ lemm_article = new_article.lemmat(500)
 # print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
 sid = SentimentIntensityAnalyzer()
-# print(sid_obj.polarity_scores(new_article.article_summary()))
+#print(sid.polarity_scores(new_article.article_summary()))
 
 # using the score and summary, combin them and analyze hows its negative and what way its leaning towards. specific lines that have the most negative appeal (make a code or use a in-bulit function to find the number of characters, and use that to fund in the () for the number of charcters)
 # len_article = len(new_article.article_text)
@@ -50,34 +42,28 @@ for sentence in sentences:
         highlighted_sentence = sentence
     #print(highlighted_sentence)
 
-# Preprocess your text data
-texts = ["Your text goes here", "Another text here", ...]
+def summarize_neutral_text(input_text):
+    # Tokenize the input text into sentences
+    sentences = nltk.sent_tokenize(input_text)
 
-input_string = articleText
-tokens = tokenize_string(input_string)
+    # Initialize the VADER SentimentIntensityAnalyzer
+    sid = SentimentIntensityAnalyzer()
 
-tokenized_texts = tokens
+    neutral_sentences = []
 
+    # Identify and collect neutral sentences
+    for sentence in sentences:
+        sentiment_scores = sid.polarity_scores(sentence)
+        compound_score = sentiment_scores['compound']
+        if -0.1 <= compound_score <= 0.1:
+            neutral_sentences.append(sentence)
 
+    # Generate the summary from neutral sentences
+    summary = ' '.join(neutral_sentences)
+    return summary
 
+input_text = articleText
+neutral_summary = summarize_neutral_text(input_text)
+print("Summary of Neutral Text:")
+print(neutral_summary)
 
-for text in texts:
-    try:
-        # Use the unicodedata library to normalize the text and remove non-UTF-8 characters
-        normalized_text = unicodedata2.normalize('NFKD', text).encode('utf-8', 'ignore').decode('utf-8')
-        tokenized_text = gensim.utils.simple_preprocess(normalized_text)
-        tokenized_texts.append(tokenized_text)
-    except Exception as e:
-        print(f"Error preprocessing text: {e}")
-
-# Create a dictionary and a document-term matrix
-dictionary = corpora.Dictionary(tokenized_texts)
-corpus = [dictionary.doc2bow(text) for text in tokenized_texts]
-
-# Train the LDA model
-lda_model = models.LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15)
-
-# Get the topics
-topics = lda_model.print_topics(num_words=5)
-for topic in topics:
-    print(topic)
