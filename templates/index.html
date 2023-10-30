@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-    <title>OpenUp HTML Template</title>
+    <title>Bias Buster | Congressional App Challenge</title>
     <!-- bootstrap min css -->
-    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome-6.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/unicons.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/swiper.min.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/magnific-popup.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/metismenu.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/plugins/fontawesome-6.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/plugins/unicons.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/plugins/swiper.min.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/vendor/magnific-popup.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/vendor/metismenu.css')}}">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css')}}">
     <!-- custom css style -->
-    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                 <div class="col-lg-12">
                     <div class="header-main-wrapper">
                         <a href="index.html" class="logo">
-                            <img src="assets/images/logo/01.svg" alt="logo">
+                            Bias <i class="invert">Buster</i>
                         </a>
                         <!-- nav -->
                         <div class="nav-area-main d-xl-block d-lg-block d-md-none d-sm-none d-none">
@@ -45,7 +46,6 @@
                                             <li><a href="index-seven.html">Photo Stock <span>New</span></a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="links-main" href="use-case.html">Use Cases</a></li>
                                     <li class="has-dropdown mega-menu">
                                         <a class="links-main" href="#">Pages</a>
                                         <div class="rts-mega-menu">
@@ -254,59 +254,47 @@
 
     <!-- open up banner area start -->
     <div class="rts-banner-area-one bg_image--1 bg_image rts-section-gap">
-        <div class="container mt--50">
+        <div class="container" style="margin-top: 125px !important;">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="content-main-wrapper">
                         <h1 class="title">
-                            OpenUp AI content
-                            Make <br> You
+                            Bias <i class="invert" style="-webkit-text-stroke-color: white; -webkit-text-stroke-width: 2px;">Buster:</i>  
+                            <br> Find
                             <span
                                 class="txt-rotate"
-                                data-period="1000"
-                                data-rotate='[ "Content.", "Blog Content.", "Sales Copy.", "Media Content."]'>
+                                data-period="2000"
+                                data-rotate='[ "Truthful", "Unbiased", "Real"]'>
                             </span>
+                            <br>
+                            Content Anywhere.
                         </h1>
                         <p class="disc">
-                            Using advanced artificial intelligence and deep learning, Article Forge writes entire 1,500+ word articles automatically. From product descriptions.
+                            Using advanced artifical intelligence and sentimental analysis techinques, Bias Buster identifies all bias within articles or literature, ensuring an unfiltered, realistic medium to convey information for <i class="invert" style="-webkit-text-stroke-color: white;">everyone</i>. 
                         </p>
-                        <div class="button-area">
-                            <a href="log-in.html" class="rts-btn btn-primary">Try OpenUp Free</a>
-                            <a href="contact.html" class="rts-btn btn-blur">Request demo</a>
-                        </div>
-                        <div class="user-area">
-                            <p>10,000+ People make by OpenUp</p>
-                            <div class="image-wrapper">
-                                <img class="one" src="assets/images/banner/user/01.png" alt="user" loading="lazy">
-                                <img class="two" src="assets/images/banner/user/02.png" alt="user" loading="lazy">
-                                <img class="three" src="assets/images/banner/user/04.png" alt="user" loading="lazy">
-                                <img class="four" src="assets/images/banner/user/03.png" alt="user" loading="lazy">
-                                <img class="five" src="assets/images/banner/user/05.png" alt="user" loading="lazy">
-                            </div>
-                        </div>
+                        <form class="product" action="/result" method="POST">
+                            <input class="fillInput" type="text" name="Link" placeholder="Enter the Link to the Website" required>
+                            <button class="rts-btn btn-blur" style="max-width: max-content;" type="submit">Analyze Bias</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bottom-mid-img">
-            <img src="assets/images/08.svg" style="scale: 1;" alt="banenr mimage" loading="lazy">
+            <p style="margin-bottom: 25px;">Scroll Down for More Info</p>
         </div>
         <div class="usefull-for-ani">
             <div class="single">
-                <img src="assets/images/banner/user/06.png" alt="img" loading="lazy">
-                <span>Content Writer</span>
+                <span>&nbsp;Academic Research?</span>
             </div>
             <div class="single blog">
-                <img src="assets/images/banner/user/05.png" alt="img" loading="lazy">
-                <span>Blog Writer</span>
+                <span>&nbsp;Correct Info?</span>
             </div>
             <div class="single copy">
-                <img src="assets/images/banner/user/03.png" alt="img" loading="lazy">
-                <span>Copy Writer</span>
+                <span>&nbsp;Unrestricted news?</span>
             </div>
             <div class="single freelancer">
-                <img src="assets/images/banner/user/04.png" alt="img" loading="lazy">
-                <span>Freelancer </span>
+                <span>&nbsp;Unbiased living?</span>
             </div>
         </div>
     </div>
@@ -319,11 +307,10 @@
                 <div class="col-lg-12 mt--50">
                     <div class="title-conter-area">
                         <h2 class="title">
-                            Instruct to our AI <br>
-                            writing generate copy
+                            How does it <i class="invert" style="-webkit-text-stroke-color: var(--color-heading-1); -webkit-text-stroke-width: 2px;">work?</i> <br>
                         </h2>
                         <p class="disc">
-                            Let our AI assist with most time consuming to write blog articles, product descriptions and more.
+                            Our AI removes biases (or at least informs you of them) to improve your understanding your world. <br><br> It does this in three steps:
                         </p>
                     </div>
                 </div>
@@ -1149,30 +1136,6 @@
                         </ul>
                     </li>
                     <li class="parent">
-                        <a href="feature.html" class="main">Use Cases</a>
-                    </li>
-                    <li class="has-droupdown parent">
-                        <a href="#" class="main">Pages</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
-                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                            <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
-                            <li><a class="mobile-menu-link" href="use-case.html">Use Case</a></li>
-                            <li><a class="mobile-menu-link" href="use-case-2.html">Use Case 2</a></li>
-                            <li><a class="mobile-menu-link" href="case-details.html">Use Case Details</a></li>
-                            <li><a class="mobile-menu-link" href="case-details-2.html">Use Case Details</a></li>
-                            <li><a class="mobile-menu-link" href="pricing.html">Pricing</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-two.html">Pricing Two</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-three.html">Pricing Three</a></li>
-                            <li><a class="mobile-menu-link" href="faq.html">FAQ</a></li>
-                            <li><a class="mobile-menu-link" href="log-in.html">Log In</a></li>
-                            <li><a class="mobile-menu-link" href="registration.html">Registration</a></li>
-                            <li><a class="mobile-menu-link" href="reset.html">Reset</a></li>
-                            <li><a class="mobile-menu-link" href="404.html">Not Found</a></li>
-                        </ul>
-                    </li>
-                    <li class="parent">
                         <a href="feature.html" class="main">Feature</a>
                     </li>
                     <li class="has-droupdown parent">
@@ -1229,15 +1192,15 @@
     <!-- rts backto top end -->
 
 
-    <script src="assets/js/vendor/jquery.min.js" defer></script>
-    <script src="assets/js/vendor/metismenu.js" defer></script>
-    <script src="assets/js/vendor/imagesloaded.pkgd.min.js" defer></script>
-    <script src="assets/js/vendor/isotope.pkgd.min.js" defer></script>
-    <script src="assets/js/vendor/magnific-popup.js" defer></script>
-    <script src="assets/js/plugins/bootstrap.min.js" defer></script>
-    <script src="assets/js/plugins/swiper.js" defer></script>
-    <script src="assets/js/plugins/contact.form.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.min.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/vendor/metismenu.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/vendor/imagesloaded.pkgd.min.js')}}" defer> </script>
+    <script src="{{ url_for('static', filename='js/vendor/isotope.pkdg.min.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/vendor/magnific-popup.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/plugins/bootstrap.min.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/plugins/swiper.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/plugins/contact.form.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}" defer></script>
 
 </body>
 

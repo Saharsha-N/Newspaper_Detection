@@ -14498,7 +14498,18 @@ body.sal-disabled [data-sal|=zoom] {
 body.sal-disabled [data-sal|=flip] {
   transform: none;
 }
-
+.fillInput {
+  font-size: 20px !important;
+  background-color: white !important;
+  max-width: 600px !important;
+  border-radius: 16px !important;
+}
+form.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
 /* elements */
 .content-main-wrapper {
   text-align: center;
@@ -14751,7 +14762,7 @@ body.sal-disabled [data-sal|=flip] {
 .usefull-for-ani .single span {
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 3rem;
   line-height: 24px;
   color: #E3E3E3;
 }
@@ -17538,7 +17549,7 @@ p.brand-title {
   }
 }
 .single-feature-area-start .featue-content-area span.pre {
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #BCBCFF;
   font-weight: 700;
   font-size: 100px;
@@ -18963,6 +18974,17 @@ p.brand-title {
   .footer-one-main-wrapper {
     flex-direction: column;
   }
+}
+.logo {
+  font-size: 28px;
+}
+.invert {
+  color: transparent;
+  text-decoration: none;
+  font-style: normal;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #0d6efd;
+  -webkit-text-fill-color: transparent;
 }
 .footer-one-main-wrapper .footer-singl-wized.left-logo {
   flex-basis: 22%;

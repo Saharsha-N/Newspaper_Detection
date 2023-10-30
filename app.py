@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request 
 import modules
 import nltk
 nltk.download('punkt')
@@ -12,10 +13,22 @@ import unicodedata2
 nltk.download('vader_lexicon')
 nltk.download('punkt')
 
+app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+@app.route('/')
+def homepage():
+    return render_template('index.html')
+
+@app.route('/result', methods = ['POST', 'GET']) 
+def result(): 
+   if request.method == 'POST': 
+      result = request.form.to_dict() 
+      return render_template("result.html", result = result) 
+
+""" 
 # TODO Finish HTML Parser and provide input command
 new_article = modules.Analysis('https://en.wikipedia.org/wiki/World_War_I')
-lemm_article = new_article.lemmat(500)
 
 # print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
@@ -65,5 +78,4 @@ def summarize_neutral_text(input_text):
 input_text = articleText
 neutral_summary = summarize_neutral_text(input_text)
 print("Summary of Neutral Text:")
-print(neutral_summary)
-
+print(neutral_summary) """
