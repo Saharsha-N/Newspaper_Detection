@@ -75,6 +75,9 @@ def result():
       output = [link, neutral_summary, articleText, threshold, SentimentIntensityAnalyzer(), sentences,  p_res, n_res, scores]
       return render_template("result.html", result = output)
 
+if __name__ == '__main__':
+   app.run(debug=True)
+
 # # print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
 # sid = SentimentIntensityAnalyzer()
