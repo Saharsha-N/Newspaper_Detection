@@ -30,3 +30,40 @@ body{
 .navbar p:hover{
     color: white;
 }
+
+.front-container{
+    display: flex;
+}
+
+.home-text{
+    display:flex;
+    flex-direction: column;
+    margin-top: 130px;
+    margin-left: 50px;
+}
+
+.title{
+    background-image: linear-gradient(to right, rgba(224, 31, 255, 1), rgba(255, 183, 99, 1));
+    background-clip: text;
+    color: transparent;
+    font-size: 160px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+
+.motto{
+    color: white;
+    font-size: 46px;
+    margin-left: 5px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.desc{
+    color: white;
+    font-size: 23px;
+    width: 700px;
+    margin-top: 0;
+    margin-left: 5px;
+}
