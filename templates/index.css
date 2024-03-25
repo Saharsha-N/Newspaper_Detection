@@ -1,0 +1,7 @@
+body{
+    font-family: "Inter";
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(34, 34, 34));
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+}
