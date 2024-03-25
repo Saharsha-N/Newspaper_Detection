@@ -5,3 +5,28 @@ body{
     background-attachment: fixed; 
     background-size: cover;
 }
+
+.navbar{
+    display: flex;
+    background-image: linear-gradient(to right, rgba(255, 183, 99, 1), rgba(224, 31, 255, 1));
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar p{
+    font-weight: 600;
+    margin-left: 70px;
+    font-size: 18px;
+    transition: color 0.5s;
+}
+
+.navbar p:hover{
+    color: white;
+}
