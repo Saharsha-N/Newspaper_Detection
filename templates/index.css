@@ -154,3 +154,10 @@ body{
 .bot-prev img:hover{
     width: 180px;
 }
+
+.front-container img{
+    width: 500px;
+    object-fit: contain;
+    margin-left: 120px;
+    margin-top: 80px;
+}
