@@ -91,3 +91,43 @@ body{
     margin-top: 0;
     margin-left: 5px;
 }
+
+.input-container{
+    display: flex;
+    margin-top: 80px;
+}
+
+.link-input{
+    background-color: rgba(59, 54, 66, 1);
+    border: none;
+    width: 700px;
+    height: 70px;
+    border-radius: 10px;
+    padding-left: 20px;
+    color: white;
+    font-size: 18px;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+.link-input::placeholder{
+    background-image: linear-gradient(rgba(224, 31, 255, 1), rgba(255, 183, 99, 1));
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+}
+
+.submit-btn{
+    width: 160px;
+    font-size: 22px;
+    border: none; 
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    background-image: linear-gradient(to right, rgba(224, 31, 255, 1), rgba(255, 183, 99, 1));
+    transition: width 0.6s;
+}
+
+.submit-btn:hover{
+    width: 180px;
+}
