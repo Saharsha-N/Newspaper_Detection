@@ -25,6 +25,7 @@ body{
     margin-left: 70px;
     font-size: 18px;
     transition: color 0.5s;
+    cursor: pointer;
 }
 
 .navbar p:hover{
@@ -126,8 +127,30 @@ body{
     font-weight: 600;
     background-image: linear-gradient(to right, rgba(224, 31, 255, 1), rgba(255, 183, 99, 1));
     transition: width 0.6s;
+    cursor: pointer;
 }
 
 .submit-btn:hover{
+    width: 200px;
+}
+
+.bot-prev{
+    display: flex;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.bot-prev img{
+    width: 150px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+
+
+.bot-prev img:hover{
     width: 180px;
 }
