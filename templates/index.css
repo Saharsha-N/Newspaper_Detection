@@ -50,7 +50,27 @@ body{
     font-weight: 500;
     margin-bottom: 0px;
     margin-top: 0;
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: .1em solid white; 
+    animation: typing 3s steps(40) forwards, blink 1.2s infinite; 
 }
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; 
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 
 .motto{
     color: white;
