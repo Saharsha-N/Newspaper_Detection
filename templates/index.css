@@ -95,7 +95,7 @@ body{
 
 .input-container{
     display: flex;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .link-input{
@@ -162,8 +162,9 @@ body{
 }
 
 .spline{
-    margin-left: 100px;
-    margin-top: 80px;
-    width: 1000px;
-    height: 600px;
+    position: absolute; 
+    left: 890px;
+    top: -20px;
+    width: 800px;
+    height: 800px;
 }
