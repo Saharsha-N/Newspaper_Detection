@@ -160,3 +160,10 @@ body{
     margin-left: 120px;
     margin-top: 80px;
 }
+
+.spline{
+    margin-left: 100px;
+    margin-top: 80px;
+    width: 1000px;
+    height: 600px;
+}
