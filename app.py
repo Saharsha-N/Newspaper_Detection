@@ -1,17 +1,28 @@
 from flask import Flask, render_template, request 
 import modules
 import nltk
+import ssl
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('vader_lexicon')
+
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from colorama import Fore, Style
 from gensim import corpora, models
 import gensim
 import unicodedata2
-nltk.download('vader_lexicon')
-nltk.download('punkt')
+
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -78,7 +89,7 @@ def result():
 if __name__ == '__main__':
    app.run(debug=True)
 
-# # print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
+## print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
 # sid = SentimentIntensityAnalyzer()
 # #print(sid.polarity_scores(new_article.article_summary()))
