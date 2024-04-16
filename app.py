@@ -52,7 +52,7 @@ def result():
         # do you want to highlight the postively skewed ones as well? We can make a threshold for that.
         if abs(compound_score) >= threshold:
             if compound_score > 0:
-                highlighted_sentence = '<span style="color:green;">' + sentence + '</span>'
+                highlighted_sentence = '<span style="color:rgb(0, 255, 100);">' + sentence + '</span>'
                 p_res.append(highlighted_sentence)
             else:
                 highlighted_sentence = '<span style="color:red;">' + sentence + '</span>'
@@ -89,6 +89,35 @@ def result():
 
 if __name__ == '__main__':
    app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## print(f"Article Summary: {new_article.article_summary()}\n \nArticle Text: {new_article.article_text(500)}")
 # # print(f"Lemmatized text: {str(new_article.lemmat(500))} \n")
