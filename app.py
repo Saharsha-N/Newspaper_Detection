@@ -87,6 +87,10 @@ def result():
       output = [link, neutral_summary, articleText, threshold, SentimentIntensityAnalyzer(), sentences,  p_res, n_res, scores]
       return render_template("result.html", result = output)
 
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
 if __name__ == '__main__':
    app.run(debug=True)
 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias Buster Chatbot</title>
+    <style>
+        body {
+          font-family: sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #f0f0f0;
+        }
+        
+        #chat-container {
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          width: 900px;
+        }
+        
+        h1 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        
+        #chat-history {
+          height: 500px;
+          overflow-y: scroll;
+          color: black;
+          font-size: 14px;
+        }
+        
+        .user-message {
+          text-align: right;
+          padding: 10px;
+          background-color: #f0f0f0;
+          border-radius: 10px;
+          margin-bottom: 5px;
+        }
+        
+        .bot-message {
+          text-align: left;
+          padding: 10px;
+          background-color: #e0f0e0;
+          border-radius: 10px;
+          margin-bottom: 5px;
+        }
+        
+        form {
+          display: flex;
+        }
+        
+        input {
+          flex-grow: 1;
+          margin-right: 10px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+        button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        #loader {
+        display: none; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+        </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>BiasBuster Chatbot</h1>
+        <div id="chat-history"></div>
+        <form id="chat-form">
+          <input type="text" id="user-input" placeholder="Enter your message">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div id="loader">
+        <img src="loader.gif" width="150px" alt="Loading...">
+      </div>
+        
+    <script>
+        const chatHistory = document.getElementById('chat-history');
+        const userInput = document.getElementById('user-input');
+        const form = document.getElementById('chat-form');
+
+        async function sendMessage() {
+        const userMessage = userInput.value;
+        userInput.value = ''; // Clear input field
+        console.log(userMessage)
+        try {
+            const response = await fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userInput: userMessage }),
+            });
+
+            const data = await response.json();
+            console.log(data)
+            const botMessage = data.response;
+            console.log(botMessage)
+            let indentedMessage = indentText(botMessage)
+            let formattedMessage = boldAsteriskText(indentedMessage)
+            // Add chat message to the chat history
+            chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+
+            for(char in botMessage){
+              //console.log(botMessage[char])
+              if(botMessage[char] == '*'){
+                console.log('bold')
+              };
+            };
+            chatHistory.innerHTML += `<div class="bot-message">${formattedMessage}</div>`;
+            
+
+
+            // Scroll to the bottom of the chat history
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+        }
+        
+        form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
+        const loader = document.getElementById('loader');
+        loader.style.display = 'block'; // Show the loader
+        sendMessage().finally(() => {
+        loader.style.display = 'none'; // Hide the loader after the message is sent
+        });;
+        });
+
+        function formatText(text){
+          boldAsteriskText(text);
+        };
+
+        function indentText(text) {
+          const lines = text.split("\n");
+          let formattedText = "";
+
+          for (const line of lines) {
+
+            if (/^\d+\. /.test(line)) {
+              formattedText += "<li>" + line.slice(line.indexOf(" ") + 1) + "</li>";
+              listNumber++; 
+            } else if (line.startsWith("* ")) {
+              formattedText += "<li>" + line.slice(2) + "</li>";
+            } else {
+              formattedText += line + "\n";
+            }
+          }
+          return formattedText;
+        };
+
+        function boldAsteriskText(text) {
+          const regex = /\*\*(.*?)\*\*/g;
+          return text.replace(regex, "<b>$1</b>");
+        };
+        
+    </script>
+</body>
+</html>
