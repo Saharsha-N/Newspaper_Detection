@@ -52,14 +52,15 @@ def result():
         # do you want to highlight the postively skewed ones as well? We can make a threshold for that.
         if abs(compound_score) >= threshold:
             if compound_score > 0:
-                highlighted_sentence = Fore.GREEN + sentence + Style.RESET_ALL
+                highlighted_sentence = '<span style="color:green;">' + sentence + '</span>'
                 p_res.append(highlighted_sentence)
             else:
-                highlighted_sentence = Fore.RED + sentence + Style.RESET_ALL
+                highlighted_sentence = '<span style="color:red;">' + sentence + '</span>'
                 n_res.append(highlighted_sentence)
         else:
             highlighted_sentence = sentence
         
+    
       scores = sid.polarity_scores(new_article.article_summary())
       
       def summarize_neutral_text(input_text):

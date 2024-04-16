@@ -297,20 +297,24 @@
                             <p class="disc">
                                 The following are the bias scores for the article provided:
                                 <br><br>
-                                {% print(result[8]) %}
+                                {{ result[8] | safe }}
                                 <br><br>
                                 
                                 <br><br>
                                 The following text has been marked as the most: Positively-Skewed
                                 <br><br>
-                                {% print(result[6]) %}
+                                {% for sentence in result[6] %}
+                                    <p>{{ sentence | safe }}</p>
+                                {% endfor %}
                                 <br>
                                 <br>
                                 
                                 <br><br>
                                 The following text has been marked as the most: Negatively-Skewed
                                 <br><br>
-                                {% print(result[7]) %}
+                                {% for sentence in result[7] %}
+                                    <p>{{ sentence | safe }}</p>
+                                {% endfor %}
                                 <br><br>
                                 
                             </p>
