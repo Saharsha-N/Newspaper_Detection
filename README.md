@@ -22,7 +22,9 @@ BiasBuster can:
 
 ## Installation
 `git clone https://github.com/Saharsha-N/Newspaper_Detection`
+
 Go to app.py
+
 `flask run`
 ### Development
 `flask run dev`
