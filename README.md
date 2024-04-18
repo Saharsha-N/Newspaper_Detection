@@ -8,15 +8,21 @@ BiasBuster can:
 - Extract *hidden* metrics/metadata 
 
 ## Packages
+### Prerequisites
 - Requests
+- Flask
 - BeautifulSoup4
 - Transformers
-- Keras_NLP
+- Keras NLP
 - Hugging Face Transformer
 - NLTK
-- Rouge-Score
+- Rouge-Scoring
 - vaderSentiment
 - Colorama
 
 ## Installation
-`git clone `
+`git clone https://github.com/Saharsha-N/Newspaper_Detection`
+Go to app.py
+`flask run`
+### Development
+`flask run dev`
