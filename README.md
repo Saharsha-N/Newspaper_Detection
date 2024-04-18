@@ -1,17 +1,13 @@
 # Newspaper_Detection
 
+## Functionality
+Using web-scraping tools, a custom NLP, and sentiment analyzer, BiasBuster can identify the textual polarity of text from a webpage seamlessly.
+BiasBuster can:
+- Highlight biased information in *any* website
+- Cross-reference information from other article to ensure *correctness*
+- Extract *hidden* metrics/metadata 
 
-- Do this instead
-- Change of Plan
-- Resume Word Removal
-- Target - Shorten to Key Words
-- Identify the topic of the biased information
-- Address Issues
-- Convert String - Do now
-
-
-
-## Packages Used
+## Packages
 - Requests
 - BeautifulSoup4
 - Transformers
@@ -21,3 +17,6 @@
 - Rouge-Score
 - vaderSentiment
 - Colorama
+
+## Installation
+`git clone `
